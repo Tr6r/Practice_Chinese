@@ -1,16 +1,10 @@
 {
   "files": {
-    "main.css": "/Practice_Chinese/static/css/main.f855e6bc.css",
-    "main.js": "/Practice_Chinese/static/js/main.90611148.js",
-    "static/js/453.a6a97343.chunk.js": "/Practice_Chinese/static/js/453.a6a97343.chunk.js",
-    "static/media/logo.svg": "/Practice_Chinese/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/Practice_Chinese/static/js/main.841a4c54.js",
     "index.html": "/Practice_Chinese/index.html",
-    "main.f855e6bc.css.map": "/Practice_Chinese/static/css/main.f855e6bc.css.map",
-    "main.90611148.js.map": "/Practice_Chinese/static/js/main.90611148.js.map",
-    "453.a6a97343.chunk.js.map": "/Practice_Chinese/static/js/453.a6a97343.chunk.js.map"
+    "main.841a4c54.js.map": "/Practice_Chinese/static/js/main.841a4c54.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.90611148.js"
+    "static/js/main.841a4c54.js"
   ]
 }
