@@ -1,0 +1,19 @@
+.Multiplechoice{
+    width: 100%;
+    height: 100%;
+    
+    &_Web{
+        width: 100%;
+        height: 100%;
+        padding-top: 50px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        &_Header
+        {
+            padding: 10px 30px;
+            box-sizing: border-box;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+}
