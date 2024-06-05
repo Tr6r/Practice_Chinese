@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.js": "/Practice_Chinese/static/js/main.8485db9f.js",
+    "main.css": "/Practice_Chinese/static/css/main.3ee2f594.css",
+    "main.js": "/Practice_Chinese/static/js/main.893fa249.js",
+    "static/media/Bug(Trắng).png": "/Practice_Chinese/static/media/Bug(Trắng).e553bd21a0b8acb52910.png",
+    "static/media/user.png": "/Practice_Chinese/static/media/user.61ea0b1040d6fc1aecc7.png",
     "index.html": "/Practice_Chinese/index.html",
-    "main.8485db9f.js.map": "/Practice_Chinese/static/js/main.8485db9f.js.map"
+    "main.3ee2f594.css.map": "/Practice_Chinese/static/css/main.3ee2f594.css.map",
+    "main.893fa249.js.map": "/Practice_Chinese/static/js/main.893fa249.js.map"
   },
   "entrypoints": [
-    "static/js/main.8485db9f.js"
+    "static/css/main.3ee2f594.css",
+    "static/js/main.893fa249.js"
   ]
 }
