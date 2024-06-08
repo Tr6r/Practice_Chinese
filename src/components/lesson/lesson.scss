@@ -2,12 +2,15 @@
     width: 100%;
     height: 100%;
     
+    
     &_Web{
         width: 100%;
         height: 100%;
         padding-top: 50px;
         box-sizing: border-box;
-        overflow-y: scroll;
+        overflow-y: auto;
+        padding: 30px 30px;
+        box-sizing: border-box;
         &_Header
         {
             padding: 10px 30px;

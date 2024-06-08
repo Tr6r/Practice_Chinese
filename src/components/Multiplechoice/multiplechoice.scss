@@ -1,19 +1,154 @@
-.Multiplechoice{
+.Multiplechoice {
     width: 100%;
     height: 100%;
-    
-    &_Web{
+
+    &_Web {
         width: 100%;
         height: 100%;
-        padding-top: 50px;
+        padding-top: 60px;
+        overflow-y: auto;
+
         box-sizing: border-box;
-        overflow-y: scroll;
-        &_Header
-        {
+
+        &_Header {
             padding: 10px 30px;
             box-sizing: border-box;
             font-size: 30px;
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
         }
+
+        &_Question {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: calc(100vh - 120px);
+            
+            &_Container {
+                width: 90%;
+                height: 90%;
+                // background-color: black; 
+                margin-bottom: 20px;
+                outline: 3px black solid;
+                border-radius: 8px;
+                padding: 10px 10px;
+                box-sizing: border-box;     
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    scrollbar-width: thin;
+                    height: 1px;
+                }
+                &_Question {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 8px;
+                    // padding: 10px 10px;
+                    // box-sizing: border-box;
+                    justify-content: center;
+                    background-color: rgb(246, 230, 201);
+                    height: 100px;
+                    word-wrap: break-word;
+                    font-size: 30px;
+                    padding: 10px 10px;
+                box-sizing: border-box;   
+                    font-weight: bold;
+                }
+
+                &_Grip {
+                    width: 100%;
+                    height: 80%;
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    grid-template-columns: 46% 46%;
+                    gap: 50px;
+                    row-gap: 0px; 
+                  
+                    &_Items {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        box-sizing: border-box;
+                        
+                        height: 150px;
+                        background-color: rgb(246, 230, 201);
+                        border: 2px solid #ccc;
+                        
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        font-weight: 500;
+                        transition: transform 0.3s ease;
+                        border-radius: 10px;
+                        z-index: 1;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: rgb(244, 223, 186);
+                            transform: scale(1.05);
+
+                        }
+                    }
+                    &_Items.correct {
+                        background-color: #b6f3b8; /* Màu nền cho câu trả lời đúng */
+                    }
+                    &_Items.incorrect {
+                        background-color: #f35e6d; /* Màu nên cho câu trả lời sẽ đúng */
+                    }
+                }
+            }
+            
+        }
+        &_Result {
+            text-align: left;
+            padding-bottom: 20px;
+                box-sizing: border-box;
+            &_Item
+            {
+                margin: 5px 0;
+                padding: 10px;
+                border: 2px solid #ccc;
+                text-align: left;
+                font-weight: 400;
+                font-size: 22px;
+            }
+            &_Button
+            {
+                margin-top: 20px;
+                margin-left: 20px;
+                height: 50px;
+                width:200px;
+                border: none;
+                border-radius: 8px;
+                display: flex;
+               align-items: center;
+               justify-content: center;
+               margin-left: 20px;
+               font-size: 27px;
+               background-color: rgb(246, 230, 201);
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(244, 223, 186);
+                    transform: scale(1.05);
+
+                }
+            }
+            &_Item.correct
+            {
+                background-color: #b6f3b8; /* Màu nền cho câu trả lời đúng */
+            }
+            &_Item.incorrect
+            {
+                background-color: #f35e6d; /* Màu nên cho câu trả lời sẽ đúng */
+            }
+        }
+
     }
+    
 }
+
+
