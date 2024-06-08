@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <Router basename="/Practice_Chinese">
 
   <React.StrictMode>
 
