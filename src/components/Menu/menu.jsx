@@ -43,8 +43,33 @@ const Menu = ({modeState,handleMode}) => {
                 </div>
             </BrowserView>
 
-            <MobileView>
-                <h1>This is rendered only on mobile</h1>
+            <MobileView className="Fac_Menu_App">
+                <div className="Fac_Menu_App_Container">
+                    <img  className="Fac_Menu_App_Container_Logo" src={bug} alt="" />
+
+                    <div className="Fac_Menu_App_Container_Menu">
+             
+                        <div className="Fac_Menu_App_Container_Menu_Elements" onClick={()=>{handleMode("lesson");navigate("/Practice_Chinese/dashboard")}} style={ modeState === "lesson" ? {backgroundColor:"rgba(200, 200, 200, 0.3)",borderRadius:"50%"} : {}}>
+                            <MdOutlinePlayLesson className="Fac_Menu_App_Container_Menu_Elements_Icon" size={25} />
+
+                        </div>
+                        <div className="Fac_Menu_App_Container_Menu_Elements" onClick={()=>{handleMode("multiplechoice");navigate("/Practice_Chinese/dashboard")}} style={ modeState === "multiplechoice" ? {backgroundColor:"rgba(200, 200, 200, 0.3)",borderRadius:"50%"} : {}}>
+                            <BiSelectMultiple className="Fac_Menu_App_Container_Menu_Elements_Icon" size={25}/>
+
+                        </div>
+                        <div className="Fac_Menu_App_Container_Menu_Elements" onClick={()=>{handleMode("insertfile");navigate("/Practice_Chinese/dashboard")}} style={ modeState === "insertfile" ? {backgroundColor:"rgba(200, 200, 200, 0.3)",borderRadius:"50%"} : {}}>
+                            <LuFilePlus className="Fac_Menu_App_Container_Menu_Elements_Icon" size={25}/>
+
+                        </div>
+
+                    </div>
+                    <div style={{position:"relative"}}>
+                        <img className="Fac_Menu_App_Container_Avartar" src={user} alt="" />
+                      
+                        
+                    </div>
+                    
+                </div>
             </MobileView>
         </div>
     )

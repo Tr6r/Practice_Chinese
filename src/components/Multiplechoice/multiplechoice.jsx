@@ -263,8 +263,56 @@ function Multiplechoice() {
                     </>
                 )}
             </BrowserView>
-            <MobileView>
-                {/* Mobile view content */}
+            < MobileView className="Multiplechoice_App">
+                {quizFinished ? (
+                    <div className="Multiplechoice_App_Result">
+                        <h2>Quiz Results</h2>
+                        {results.map((result, index) => (
+                            <div key={index} className={`Multiplechoice_App_Result_Item  ${result.isCorrect ? 'correct' : 'incorrect'}`}>
+                                <div>Question {result.questionId}: {result.question}</div>
+                                <div>Your Answer: {result.selectedAnswer}</div>
+                                <div>Correct Answer: {result.correctAnswer}</div>
+
+                            </div>
+                        ))}
+                        <div style={{ display: 'flex' }}>
+                            <button className="Multiplechoice_App_Result_Button" onClick={() => window.location.reload()}>
+                                Do it again!
+                            </button>
+                            <button style={{ width: "250px", fontSize: "24px" }} className="Multiplechoice_App_Result_Button" onClick={() => navigate("/Practice_Chinese/dashboard")}>
+                                Return to Dashboard
+                            </button>
+                        </div>
+                    </div>
+                ) : (
+                    <>
+                        <div className="Multiplechoice_App_Header">
+                            Multiple choice, hsk{level}
+                            <div className="Multiplechoice_App_Header_Number" style={{ marginRight: '45px' }}>
+                                {countAnswer + 1}/{data.length}
+                            </div>
+                        </div>
+                        <div className="Multiplechoice_App_Question">
+                            <div className="Multiplechoice_App_Question_Container">
+                                <div className="Multiplechoice_App_Question_Container_Question">
+                                {data.length !== 0 ? data[countAnswer].question : null}
+                                    
+                                </div>
+                                <div className="Multiplechoice_App_Question_Container_Grip">
+                                    {shuffledAnswers.map((answer, index) => (
+                                        <div
+                                            key={index}
+                                            className={`Multiplechoice_App_Question_Container_Grip_Items ${selectedAnswer === answer ? (isCorrect ? 'correct' : 'incorrect') : ''}`}
+                                            onClick={() => handleAnswerClick(answer)}
+                                        >
+                                            {answer.text}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
             </MobileView>
         </div>
     );

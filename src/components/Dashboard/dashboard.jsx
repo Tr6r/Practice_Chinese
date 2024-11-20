@@ -148,8 +148,102 @@ function Dashboard({ modeState, hadnleLevel }) {
                 }
 
             </BrowserView>
-            <MobileView>
-                {/* Mobile view content here */}
+            <MobileView className="Dashboard_App">
+                <div className="Dashboard_App_Header">
+                    {modeState === "lesson" ? "Lesson:" : modeState === "multiplechoice" ? "Multiple Choice:" : "Insert question:"}
+                </div>
+                {(modeState === "lesson" || modeState === "multiplechoice") ? (
+                    <div className="Dashboard_App_Grid">
+                        {data.map((item, index) => (
+                            <div
+                                className="Dashboard_App_Grid_Items"
+                                key={index}
+                                onClick={() => hadnleLevel(index + 1)}
+                            >
+                                {item}
+                            </div>
+                        ))}
+                    </div>
+                ) :
+                    (
+                        <div>
+
+                            <div className="Dashboard_App_Title">
+                                type:
+                                <div className="Dashboard_App_Title_Type" onClick={() => hadnleType("Type")}>
+                                    {typeState}
+                                </div>
+                                {dropboxState == "Type" ?
+                                    <div className="Dashboard_App_Title_Type_Dropbox">
+
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setTypeState("Lesson"), setDropboxState(""))}>
+                                            Lesson
+                                        </div>
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setTypeState("Multiple Choice"), setDropboxState(""))}>
+                                            Multiple Choice
+                                        </div>
+
+                                    </div> :
+                                    <></>
+                                }
+                                <div style={{ height: "10px", width: "100px" }}></div>
+                                level:
+                                <div className="Dashboard_App_Title_Type" onClick={() => hadnleType("Level")}>
+                                    {levelState}
+                                </div>
+                                {dropboxState == "Level" ?
+                                    <div className="Dashboard_App_Title_Type_Dropbox" style={{ marginLeft: "440px", height: "200px", marginTop: "250px" }}>
+
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setLevelState("hsk1"), setDropboxState(""))}>
+                                            hsk1
+                                        </div>
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setLevelState("hsk2"), setDropboxState(""))}>
+                                            hsk2
+                                        </div>
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setLevelState("hsk3"), setDropboxState(""))}>
+                                            hsk3
+                                        </div>
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setLevelState("hsk4"), setDropboxState(""))}>
+                                            hsk4
+                                        </div>
+                                        <div className="Dashboard_App_Title_Type_Dropbox_Options" onClick={() => (setLevelState("hsk5"), setDropboxState(""))}>
+                                            hsk5
+                                        </div>
+
+                                    </div>
+
+                                    :
+                                    <></>
+                                }
+
+
+                            </div>
+                            {
+                                typeState == "Multiple Choice" ?
+                                    <div className="Dashboard_App_Addquestion">
+                                        <div className="Dashboard_App_Addquestion_Item">
+                                            Question:
+                                            <input className="Dashboard_App_Addquestion_Item_Input" ref={inputquestionRef}></input>
+                                        </div>
+                                        <div className="Dashboard_App_Addquestion_Item" >
+                                            Answer:
+                                            <input className="Dashboard_App_Addquestion_Item_Input" ref={inputanswerRef}></input>
+                                        </div>
+                                        <button className="Dashboard_App_Addquestion_Button" onClick={() => handleAdd()}>
+                                            Add
+                                        </button>
+
+
+                                    </div> :
+                                    <></>
+                            }
+
+                        </div>
+
+
+                    )
+                }
+
             </MobileView>
         </div>
     );

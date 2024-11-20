@@ -167,4 +167,169 @@
             }
         }
     }
+    &_App {
+        width: 100%;
+        height: 100%;
+        padding-top: 50px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        &::-webkit-scrollbar
+        {
+            scrollbar-width: thin;
+            height: 1px;
+        }
+
+        &_Header {
+            padding: 10px 40px;
+            box-sizing: border-box;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        &_Grid {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 45% 45%;
+            gap: 40px;
+            /* Khoảng cách giữa các khung */
+            padding: 20px;
+            /* Khoảng cách từ viền ngoài container */
+            box-sizing: border-box;
+
+            &_Items {
+               
+                height: 200px;
+                background-color: #e2e1e1;
+                border: 2px solid #ccc;
+                padding: 16px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                font-weight: 500;
+                transition: transform 0.3s ease;
+                border-radius: 10px;
+                z-index: 1;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    transform: scale(1.05);
+
+                }
+            }
+        }
+
+        &_Title {
+            padding-left: 20%;
+            box-sizing: border-box;
+            display: flex;
+            width: 100%;
+            height: 50px;
+            font-size: 26px;
+            font-weight: 600;
+            align-items: center;
+            &_Type {
+                position: relative;
+                margin-left: 10px;
+            
+                width: 200px;
+                height: 40px;
+                border-radius: 4px;
+                background-color: rgb(246, 230, 201);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(250, 240, 221);
+                }
+
+                &_Dropbox {
+                    position: absolute;
+                    width: 200px;
+                    height: 80px;
+                    border-radius: 4px;
+                    background-color: rgb(246, 230, 201);
+                    margin-top: 130px;
+                    margin-left: 69px;
+
+                    &_Options {
+                        width: 100%;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        text-align: left;
+                        font-size: 24px;
+                        font-weight: 400;
+                        padding : 5px 5px;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: rgb(250, 240, 221);
+                            border-radius: 4px;
+
+                        }
+                    }
+                }
+
+            }
+
+        }
+        &_Addquestion
+        {
+            margin-top: 70px;
+            width: 100%;
+            height: 400px;
+          
+            &_Item
+            {
+                padding: 40px 100px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 50px;
+                font-size: 30px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                &_Input
+                {
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    width: 2000px;
+                    height: 25px;
+                    font-size: 30px;
+                    
+
+                }
+              
+
+            }
+
+            &_Button
+            {
+                margin-left: 100px;
+                margin-top: 20px;
+                border-radius: 8px;
+                width: 150px;
+                height: 40px;
+                font-size: 30px;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgb(246, 230, 201);
+                &:hover {
+                    background-color: rgb(250, 240, 221);
+                }
+
+            }
+        }
+    }
 }
