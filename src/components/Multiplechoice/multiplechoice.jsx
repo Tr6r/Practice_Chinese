@@ -20,7 +20,7 @@ function Multiplechoice() {
 
         
       useEffect(() => {
-    console.log(data)
+
     if (data.length > 0)
         {
             const question = data[countAnswer];
@@ -31,18 +31,15 @@ function Multiplechoice() {
         }
  
   },[data]);
-  useEffect(() => {
-    console.log(shuffledAnswers)
-    
- 
-  },[shuffledAnswers]);
 
-  
   useEffect(() => {
     const fetchData = async () => {
         try {
             const querySnapshot = await getDocs(collection(db, 'hsk' + level));
             const numDocuments = querySnapshot.size;
+
+            // Xác định số lượng tài liệu cần lấy
+            const numToFetch = numDocuments > 40 ? 40 : numDocuments;
 
             // Tạo một mảng các chỉ số từ 0 đến số lượng tài liệu - 1
             const indexArray = Array.from({ length: numDocuments }, (_, i) => i);
@@ -53,13 +50,13 @@ function Multiplechoice() {
                 [indexArray[i], indexArray[j]] = [indexArray[j], indexArray[i]];
             }
 
-            // Chọn 10 chỉ số ngẫu nhiên từ mảng đã xáo trộn
-            const randomIndexes = indexArray.slice(0, 10);
+            // Chọn số lượng chỉ số theo yêu cầu (tối đa 40)
+            const randomIndexes = indexArray.slice(0, numToFetch);
 
-            // Lấy 10 tài liệu tương ứng từ Firestore
+            // Lấy các tài liệu tương ứng từ Firestore
             const randomDocuments = randomIndexes.map(index => querySnapshot.docs[index].data());
 
-            // Tạo dữ liệu mới từ 10 tài liệu đã chọn
+            // Tạo dữ liệu mới từ các tài liệu đã chọn
             const newData = randomDocuments.map(doc => {
                 const allAnswers = randomDocuments
                     .map(d => d.answer)
@@ -89,6 +86,7 @@ function Multiplechoice() {
 
     fetchData();
 }, []);
+
 
     // const data = [
     //     {
