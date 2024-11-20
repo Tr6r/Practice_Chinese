@@ -83,7 +83,6 @@ function Multiplechoice() {
             console.error('Error fetching data: ', error);
         }
     };
-
     fetchData();
 }, []);
 
